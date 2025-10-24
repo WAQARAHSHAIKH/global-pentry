@@ -1,0 +1,45 @@
+/* Custom Colors based on script palette */
+:root {
+    --color-primary: #0E9F6E;
+    /* Deep Teal/Jade */
+    --color-secondary: #FBBF24;
+    /* Amber/Mustard */
+}
+
+/* Custom Tailwind-like utility classes based on CSS variables */
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+/* Smooth Scroll for SPA feel */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Banner styling for background image and overlay */
+.banner-bg {
+    background-image: url('https://images.unsplash.com/photo-1623475173140-ad2f0369ca92?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdsb2JhbCUyMGN1aXNpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
