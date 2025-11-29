@@ -1,68 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'The Global Pantry | Discover & Share Global Recipes')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Global Pantry | Authentic Recipes</title>
+    
+    {{-- Load Bootstrap 5 CSS --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    {{-- Load Font Awesome Icons (for the search, add, and other icons) --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL5gJk0d3y/4zI/r0b9wz3C0s6M1u9e5z50C5Rz5k50O5w50N5g50O5w50N5g50O5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    {{-- Custom CSS (For colors, fonts, and custom utilities like vh-60) --}}
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
 
-    <script>
-        // Define colors for Tailwind
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3b82f6', // Your primary blue
-                        secondary: '#f97316', // Your secondary orange
-                    },
-                }
-            }
-        }
-    </script>
-    {{-- Tailwind CSS --}}
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    {{-- Font Awesome --}}
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8yI0yRzT4p3Y3O6Qn4iQe7i4B5xK1uX8h5t2bN1X+3t5e7v5O5aN7/k1g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
-
-    {{-- Local CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/browse.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-
-
-    @stack('styles') {{-- For page-specific CSS --}}
+    {{-- Styles pushed from individual pages (e.g., specific section styles) --}}
+    @stack('styles')
 </head>
+<body>
 
-<body class="bg-gray-50 font-sans">
-    {{-- Include your header/navigation --}}
+    {{-- The main header/navigation goes here --}}
     @include('partials.header')
 
-    {{-- Main content will go here --}}
-    <main>
-        @yield('content')
-    </main>
+    {{-- The main content of the page goes here (@yield('content') is replaced by the content section of child views) --}}
+    @yield('content')
 
-    {{-- Include your footer --}}
+    {{-- The footer goes here --}}
     @include('partials.footer')
 
-    @stack('scripts') {{-- For page-specific JS --}}
-    <script src="{{ asset('js/browse.js') }}"></script>
-    <script src="{{ asset('js/homepage.js') }}"></script>
-    <script src="{{ asset('js/login.js') }}"></script>
-    <script src="{{asset('js/recipe_cards_logic.js')}}"></script>
-    <script src="{{asset('js/header.js')}}"></script>
-    <script src="{{asset('js/footer.js')}}"></script>
-    <!-- <script src="firebase-config.js"></script> -->
+    {{-- Load Bootstrap 5 JS Bundle --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    {{-- Custom JS --}}
+    <script src="{{ url('js/app.js') }}"></script>
+
+    {{-- Scripts pushed from individual pages (e.g., form toggles) --}}
+    @stack('scripts')
 </body>
-
 </html>

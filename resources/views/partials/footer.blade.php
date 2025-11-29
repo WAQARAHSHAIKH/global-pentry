@@ -1,31 +1,50 @@
-<footer class="bg-gray-800 text-white py-10">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="col-span-2 md:col-span-1">
-                <h4 class="text-xl font-semibold mb-4 text-secondary">Quick Links</h4>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="homepage.html" class="hover:text-white transition duration-200">Home</a></li>
-                    <li><a href="browse.html" class="hover:text-white transition duration-200">Browse</a></li>
-                    <li><a href="#contact" class="hover:text-white transition duration-200">Contact</a></li>
-                    <li><a href="#" class="hover:text-white transition duration-200">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="md:col-span-1">
-                <h4 class="text-xl font-semibold mb-4 text-secondary">Connect</h4>
-                <div class="flex space-x-4 text-2xl">
-                    <a href="#" class="hover:text-primary transition duration-200"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="hover:text-primary transition duration-200"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-primary transition duration-200"><i class="fab fa-twitter"></i></a>
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+            
+            {{-- Column 1: Brand Info --}}
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bolder text-success mb-3">The Global Pantry</h5>
+                <p class="small text-muted">
+                    Connecting cultures through authentic, free tutorials and community-shared recipes.
+                </p>
+                <div class="social-icons mt-3">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-            <div class="md:col-span-2">
-                <h4 class="text-xl font-semibold mb-4 text-secondary">The Global Pantry</h4>
-                <p class="text-gray-400">Dedicated to curating and sharing authentic recipes and connecting the global cooking community.</p>
+
+            {{-- Column 2: Quick Links --}}
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold mb-3 text-success">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2 text-success"><a href="{{ url('/') }}" class="text-muted text-decoration-none small">Home</a></li>
+                    <li class="mb-2 text-success"><a href="{{ url('browse') }}" class="text-muted text-decoration-none small">Browse Recipes</a></li>
+                    <li class="mb-2 text-success"><a href="{{ url('/#about') }}" class="text-muted text-decoration-none small">About Us</a></li>
+                    <li class="mb-2 text-success"><a href="{{ url('login') }}" class="text-muted text-decoration-none small">Member Login</a></li>
+                </ul>
             </div>
+
+            {{-- Column 3: Contact/Legal --}}
+            <div class="col-md-5 mb-4">
+                <h5 class="fw-bold mb-3 text-success">Support & Legal</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2 text-muted small"><i class="fas fa-envelope me-2"></i> support@globalpantry.com</li>
+                    <li class="mb-2 text-muted small"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</li>
+                    <li class="mb-2"><a href="#" class="text-muted text-decoration-none small">Privacy Policy</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted text-decoration-none small">Terms of Service</a></li>
+                </ul>
+            </div>
+
         </div>
-        
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
-            &copy; <span id="currentYearFooter"></span> The Global Pantry. All rights reserved.
+
+        {{-- Copyright Row --}}
+        <hr class="bg-secondary opacity-25">
+        <div class="text-center">
+            <p class="text-muted small mb-0">
+                &copy; {{ date('Y') }} The Global Pantry. All rights reserved.
+            </p>
         </div>
     </div>
 </footer>
